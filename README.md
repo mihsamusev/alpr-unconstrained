@@ -1,5 +1,13 @@
 # ALPR in Unscontrained Scenarios
 
+## Differences between this fork and the original
+
+- darknet Makefile is changed to compile with GPU and CUDNN
+- works in python 3, both core python and darknet parts
+- added file `vid2frames` to convert videos to folder of images
+
+The rest reproduces original `README.md`
+
 ## Introduction
 
 This repository contains the author's implementation of ECCV 2018 paper "License Plate Detection and Recognition in Unconstrained Scenarios".
