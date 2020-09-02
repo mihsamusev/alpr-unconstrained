@@ -42,15 +42,15 @@ if __name__ == '__main__':
 
 			bname = basename(splitext(img_path)[0])
 
-			R,_ = detect(vehicle_net, vehicle_meta, img_path ,thresh=vehicle_threshold)
+			R,_ = detect(vehicle_net, vehicle_meta, bytes(img_path, encoding='utf-8') ,thresh=vehicle_threshold)
 
-			R = [r for r in R if r[0] in ['car','bus']]
+			R = [r for r in R if r[0].decode() in ['car','bus']]
 
 			print('\t\t%d cars found' % len(R))
 
 			if len(R):
 
-				Iorig = cv2.imread(img_path.decode('utf-8'))
+				Iorig = cv2.imread(img_path)
 				WH = np.array(Iorig.shape[1::-1],dtype=float)
 				Lcars = []
 
